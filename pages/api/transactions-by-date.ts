@@ -2,16 +2,17 @@ import { NextApiHandler } from 'next'
 import { query } from '../../lib/db'
 
 const handler: NextApiHandler = async (req, res) => {
-  const { rtid, requestor } = req.body
+  const { startDate, endDate, identifier} = req.body
 
   try {
     const results = await query(
         `
-        INSERT INTO REQUESTS_FROM
-        (RTid, Identifier)
-        VALUES (?, ?)
+        SELECT * 
+        FROM SEND_TRANSACTION 
+        WHERE TransactionTime >= ? 
+        AND TransactionTime <= ? 
         `,
-      [rtid, requestor]
+      [startDate, endDate]
     )
 
     return res.json(results)

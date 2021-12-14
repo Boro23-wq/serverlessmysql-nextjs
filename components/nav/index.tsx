@@ -20,6 +20,9 @@ export default function Nav({ title = 'Payment Wallet', user }) {
             <Link href={`/transactions/${user?.PhoneNo}`}>
               <a className="text-lg ml-8">Transactions</a>
             </Link>
+            <Link href={`/statements/${user?.PhoneNo}`}>
+              <a className="text-lg ml-8">Statements</a>
+            </Link>
             <Link href='/'>
               <a className="text-lg ml-8">Signout</a>
             </Link>

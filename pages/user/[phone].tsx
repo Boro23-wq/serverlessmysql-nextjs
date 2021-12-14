@@ -107,7 +107,7 @@ export default function ProfilePage() {
           borrowedAmount,
           tt: generateDateTime(),
           memo: requestMemo ? requestMemo : 'Requested!',
-          borrowerSSN: borrower.SSN,
+          borrowerSSN: borrower?.SSN,
         }),
       })
 
@@ -139,7 +139,7 @@ export default function ProfilePage() {
       <>
         <Container className="py-4">
           <Nav title="Payment Wallet" user={user} />
-          <div>Welcome <b><i>{user.Name}</i></b></div>
+          <div>Welcome <b><i>{user?.Name}</i></b></div>
 
           {/* SEND MONEY */}
           <div>

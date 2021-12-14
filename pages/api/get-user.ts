@@ -3,6 +3,7 @@ import { query } from '../../lib/db'
 
 const handler: NextApiHandler = async (req, res) => {
   const { phone } = req.query
+
   try {
     if (!phone) {
       return res.status(400).json({ message: '`Phone` required' })
